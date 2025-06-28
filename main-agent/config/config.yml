@@ -1,0 +1,22 @@
+webhook:
+  github:
+    # Secret is read from GITHUB_WEBHOOK_SECRET environment variable
+    repositories:
+      - owner: vinay4appsentinels
+        repo: agent-development-army
+        enabled: true
+      # Add more repositories as needed
+      # - owner: organization
+      #   repo: repository-name
+      #   enabled: true
+
+# Logging configuration
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Service configuration
+service:
+  name: "GitHub Webhook Service"
+  version: "1.0.0"
+  description: "Service to handle GitHub webhooks and trigger automated actions"
