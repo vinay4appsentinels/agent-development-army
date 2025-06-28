@@ -12,6 +12,7 @@ This is the Stage 1 implementation of the GitHub Webhook Service that listens to
 - Configuration management via environment variables and YAML
 - Docker containerization with volume mounts
 - Health check endpoint
+- Ping endpoint for service testing
 - Repository whitelist support
 
 ## Project Structure
@@ -54,7 +55,7 @@ GITHUB_WEBHOOK_SECRET=your-webhook-secret-here
 docker-compose up -d
 ```
 
-The service will be available at `http://localhost:8000`
+The service will be available at `http://localhost:4044`
 
 ### 3. Running Locally (Development)
 
@@ -74,19 +75,25 @@ python -m app.main
 
 - `GET /` - Service information
 - `GET /health` - Health check endpoint
+- `GET /ping` - Ping endpoint (returns pong with service status)
 - `POST /webhook/github` - GitHub webhook receiver
 
 ## Testing the Webhook
 
 1. Configure your GitHub repository webhook:
-   - URL: `http://your-server:8000/webhook/github`
+   - URL: `http://your-server:4044/webhook/github`
    - Content type: `application/json`
    - Secret: Same as `GITHUB_WEBHOOK_SECRET`
    - Events: Select "Issues" events
 
-2. Test with curl:
+2. Test the ping endpoint:
 ```bash
-curl -X POST http://localhost:8000/webhook/github \
+curl http://localhost:4044/ping
+```
+
+3. Test the webhook endpoint:
+```bash
+curl -X POST http://localhost:4044/webhook/github \
   -H "Content-Type: application/json" \
   -H "X-GitHub-Event: issues" \
   -H "X-GitHub-Delivery: test-delivery-id" \

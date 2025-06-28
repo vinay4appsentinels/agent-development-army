@@ -58,6 +58,15 @@ async def health_check():
     }
 
 
+@app.get("/ping")
+async def ping():
+    return {
+        "status": "pong",
+        "message": "Service is running",
+        "port": settings.port
+    }
+
+
 if __name__ == "__main__":
     uvicorn.run(
         "app.main:app",

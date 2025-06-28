@@ -12,7 +12,7 @@ class WebhookConfig(BaseSettings):
 
 
 class Settings(BaseSettings):
-    port: int = Field(default=8000, env="PORT")
+    port: int = Field(default=4044, env="PORT")
     log_level: str = Field(default="INFO", env="LOG_LEVEL")
     debug: bool = Field(default=False, env="DEBUG")
     

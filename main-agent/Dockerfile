@@ -24,10 +24,10 @@ RUN mkdir -p /root/.ssh /app/config
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
-ENV PORT=8000
+ENV PORT=4044
 
 # Expose port
-EXPOSE 8000
+EXPOSE 4044
 
 # Run the application
 CMD ["python", "-m", "app.main"]
