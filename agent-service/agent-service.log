@@ -1,0 +1,21 @@
+INFO:     Started server process [1345890]
+INFO:     Waiting for application startup.
+2025-06-28 19:44:44,805 - app.main - INFO - Starting Agent Service
+2025-06-28 19:44:44,805 - app.main - INFO - Service running on port 4045
+2025-06-28 19:44:44,805 - app.main - INFO - Available roles: DEVELOPER, ARCHITECT, ANALYST
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:4045 (Press CTRL+C to quit)
+INFO:     127.0.0.1:56698 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58254 - "GET /ping HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58256 - "GET /agent/roles HTTP/1.1" 200 OK
+2025-06-28 19:45:51,165 - app.services.job_manager.JobManager - INFO - Created job 55ab9a10-bd72-4e84-9ac7-08bab117a1f8 with role DEVELOPER
+2025-06-28 19:45:51,166 - app.services.job_manager.JobManager - INFO - Started job 55ab9a10-bd72-4e84-9ac7-08bab117a1f8
+2025-06-28 19:45:51,166 - app.routers.jobs - INFO - Created job 55ab9a10-bd72-4e84-9ac7-08bab117a1f8 with role DEVELOPER
+INFO:     127.0.0.1:37186 - "POST /agent/jobs HTTP/1.1" 200 OK
+2025-06-28 19:45:51,166 - app.services.job_manager.JobManager - INFO - Executing job 55ab9a10-bd72-4e84-9ac7-08bab117a1f8
+2025-06-28 19:45:51,167 - app.services.claude_service.ClaudeService - INFO - Executing job 55ab9a10-bd72-4e84-9ac7-08bab117a1f8 with role DEVELOPER
+INFO:     127.0.0.1:37192 - "GET /agent/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40936 - "GET /agent/jobs/55ab9a10-bd72-4e84-9ac7-08bab117a1f8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40948 - "GET /agent/stats HTTP/1.1" 200 OK
+2025-06-28 19:47:44,209 - app.services.job_manager.JobManager - INFO - Job 55ab9a10-bd72-4e84-9ac7-08bab117a1f8 completed with status: completed

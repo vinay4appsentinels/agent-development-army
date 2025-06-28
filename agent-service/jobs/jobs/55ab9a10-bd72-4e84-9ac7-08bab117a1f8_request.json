@@ -1,0 +1,26 @@
+{
+  "role": "DEVELOPER",
+  "context": {
+    "repository": "vinay4appsentinels/agent-development-army",
+    "issue_number": 1,
+    "branch": "main",
+    "workspace_path": null,
+    "commit_sha": null
+  },
+  "task": {
+    "type": "code_review",
+    "description": "Review the webhook service implementation in main-agent directory",
+    "priority": "normal",
+    "requirements": [
+      "Check code quality",
+      "Identify potential issues"
+    ],
+    "constraints": []
+  },
+  "environment": {
+    "variables": {},
+    "tools": [],
+    "working_directory": null
+  },
+  "metadata": {}
+}

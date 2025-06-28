@@ -1,0 +1,47 @@
+roles:
+  DEVELOPER:
+    description: "Software developer focused on code implementation, debugging, and testing"
+    timeout: 1800  # 30 minutes
+    system_prompt_file: "developer.txt"
+    cli_args: []
+    capabilities:
+      - "code_implementation"
+      - "bug_fixing"
+      - "unit_testing"
+      - "code_review"
+      - "refactoring"
+    
+  ARCHITECT:
+    description: "System architect focused on design, architecture, and technical decisions"
+    timeout: 2400  # 40 minutes
+    system_prompt_file: "architect.txt"
+    cli_args: []
+    capabilities:
+      - "system_design"
+      - "architecture_planning"
+      - "technology_selection"
+      - "performance_optimization"
+      - "scalability_analysis"
+    
+  ANALYST:
+    description: "Code analyst focused on analysis, documentation, and code quality"
+    timeout: 1200  # 20 minutes
+    system_prompt_file: "analyst.txt"
+    cli_args: []
+    capabilities:
+      - "code_analysis"
+      - "documentation_generation"
+      - "quality_assessment"
+      - "security_analysis"
+      - "performance_analysis"
+
+# Task type to role mapping recommendations
+task_role_mapping:
+  code_review: ["DEVELOPER", "ANALYST"]
+  bug_fix: ["DEVELOPER"]
+  feature_implementation: ["DEVELOPER", "ARCHITECT"]
+  architecture_design: ["ARCHITECT"]
+  code_analysis: ["ANALYST", "DEVELOPER"]
+  documentation: ["ANALYST"]
+  testing: ["DEVELOPER"]
+  optimization: ["DEVELOPER", "ARCHITECT"]
